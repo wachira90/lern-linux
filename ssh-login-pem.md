@@ -53,7 +53,7 @@ id_rsa  id_rsa.pub
 
 ## COPY KEY TO TARGET
 
-ssh-copy-id -i .ssh/id_rsa.pub wachira@192.168.4.42 -p 2211
+ssh-copy-id -i .ssh/id_rsa.pub wachira@192.168.4.42 -p 22
 
 ## RENAME FILE TO *.PEM
 
@@ -61,7 +61,7 @@ cp .ssh/id_rsa.pub .ssh/id_rsa.pem
 
 ## TEST LOGIN TO TARGET 
 
-sudo ssh -i .ssh/id_rsa.pub wachira@192.168.4.42 -p 2211
+sudo ssh -i .ssh/id_rsa.pub wachira@192.168.4.42 -p 22
 
 ## PERMISSION FILE 
 
@@ -75,7 +75,7 @@ sudo ls -la .ssh/
 
 ## TEST LOGIN TO TARGET
 
-ssh -i .ssh/id_rsa.pem wachira@192.168.4.42 -p 2211
+ssh -i .ssh/id_rsa.pem wachira@192.168.4.42 -p 22
 
 
 ssh-copy-id -i .ssh/id_rsa.pub wachira@192.168.6.179
