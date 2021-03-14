@@ -1,0 +1,26 @@
+firewall-cmd --zone=public --permanent --add-port=3306/tcp
+firewall-cmd --reload
+
+
+firewall-cmd --state
+firewall-cmd --get-default-zone
+firewall-cmd --get-zones
+firewall-cmd --get-active-zones
+firewall-cmd --zone=public --list-all
+firewall-cmd --list-all-zones
+-------
+
+firewall-cmd --zone=work --change-interface=eth1
+firewall-cmd --get-active-zones
+firewall-cmd --set-default-zone=home
+firewall-cmd --get-default-zone
+firewall-cmd --get-services
+firewall-cmd --zone=public --remove-service=http --permanent
+firewall-cmd --zone=public --add-port=32400/tcp
+firewall-cmd --zone=public --list-ports
+-------
+firewall-cmd --zone=public --add-port=443/tcp --permanent
+firewall-cmd --zone=public --add-port=55199/tcp --permanent
+firewall-cmd --zone=public --remove-port=55199/tcp --permanent
+firewall-cmd --add-service=http --permanent
+firewall-cmd --reload
