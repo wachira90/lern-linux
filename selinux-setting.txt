@@ -1,0 +1,5 @@
+chcon -R -t httpd_log_t /usr/share/nginx/www.example.com/storage
+chcon -R -t httpd_sys_rw_content_t /usr/share/nginx/www.example.com/temp
+chcon -R -t httpd_sys_rw_content_t /usr/share/nginx/www.example.com/auth/storage/framework/sessions/
+chcon -R -t httpd_sys_rw_content_t /usr/share/nginx/www.example.com/auth/storage/framework/views/
+chcon -R -t httpd_log_t /usr/share/nginx/www.example.com/auth/storage/logs
