@@ -1,6 +1,8 @@
 # ssh-login-pem
 
 ## GENERATE KEY
+
+```
 [wachira@s4-42 ~]$ ssh-keygen -t rsa -b 2048 -v
 
 Generating public/private rsa key pair.
@@ -43,29 +45,40 @@ The key's randomart image is:
 
 +----[SHA256]-----+
 
-
 [wachira@s4-42 ~]$
+```
 
 ## LIST KEY FILE 
 
+```
 ls .ssh/
 
 id_rsa  id_rsa.pub
+```
 
 ## COPY KEY TO TARGET
 
+```
 ssh-copy-id -i .ssh/id_rsa.pub wachira@192.168.4.42 -p 22
+```
+
 
 ## RENAME FILE TO *.PEM
 
+```
 cp .ssh/id_rsa.pub .ssh/id_rsa.pem
+```
 
-## TEST LOGIN TO TARGET 
 
+## TEST LOGIN TO TARGET
+
+```
 sudo ssh -i .ssh/id_rsa.pub wachira@192.168.4.42 -p 22
+```
 
-## PERMISSION FILE 
+## PERMISSION FILE
 
+```
 sudo chmod -R 400 .ssh/
 
 sudo chmod 775 .ssh/known_hosts
@@ -73,20 +86,29 @@ sudo chmod 775 .ssh/known_hosts
 sudo chown wachira:wachira .ssh/known_hosts
 
 sudo ls -la .ssh/
+```
 
 ## TEST LOGIN TO TARGET
 
+```
 ssh -i .ssh/id_rsa.pem wachira@192.168.4.42 -p 22
 
-
 ssh-copy-id -i .ssh/id_rsa.pub wachira@192.168.6.179
+```
 
 ## CHANGE CONFIG
 
+```
 sudo nano /etc/ssh/sshd_config
 
 PasswordAuthentication no
 
+PermitRootLogin yes
+```
+
 ## ANOTHERWAY COPY KEY TO TARGET 
 
+```
 cat .ssh/id_rsa.pub | ssh wachira@192.168.6.179 "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+```
+
