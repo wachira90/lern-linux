@@ -32,3 +32,10 @@ pgrep firefox
 ````
 kill -9 <pid number>
 ````
+
+## mail notify
+
+````
+top -b -n1 | mail -s 'Process snapshot' you@example.com
+````
+
