@@ -4,7 +4,7 @@
 
 sudo nano /etc/netplan/01-netcfg.yaml
 
-## dhcp
+## dhcp original ok
 
 /etc/netplan/01-netcfg.yaml
 ````
@@ -14,6 +14,7 @@ network:
   ethernets:
     ens3:
       dhcp4: yes
+      dhcp6: yes
 ````
 
 ## static
