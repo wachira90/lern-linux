@@ -17,7 +17,7 @@ nano /etc/yum.repos.d/fedora-updates.repo
 # yum reinstall ca-certificates
 ````
 
-#๒ change back "http" to "https"
+## change back "http" to "https"
 
 ````
 nano /etc/yum.repos.d/fedora.repo
